@@ -14,9 +14,11 @@ function sendEmail(){
         `
     }
     emailjs.send('service_zmgwepn','template_gxabvb2',data).then((Response) =>{
-        alert('Success')
+        h2.innerText = 'Thank you For Contact'
+        oppen()
     }).catch((Error) =>{
-        alert(Error)
+        h2.innerText = Error
+        oppen()
     })
 }
 
@@ -25,7 +27,8 @@ document.getElementById('send').addEventListener('click',() =>{
     if(document.getElementById('email').value != '' && document.getElementById('message').value !=''){
         sendEmail()
     }else{
-        alert('Pleas Enter your Email And your Message')
+        h2.innerText = 'Pleas Enter your Email And your Message'
+        oppen()
     }
 })
 
@@ -45,3 +48,30 @@ up.onclick = function(){
         behavior: "smooth",
     })
 }
+
+let bac = document.createElement('div');
+let divs = document.createElement('div');
+let h2 = document.createElement('h2');
+let btn = document.createElement('button');
+ btn.classList.add('closse');
+ divs.classList.add('thank');
+ bac.classList.add('background-blur');
+ btn.innerText = 'Close';
+ document.body.prepend(bac);
+ divs.appendChild(h2);
+ divs.appendChild(btn);
+ document.querySelector('.background-blur').appendChild(divs);
+
+
+
+function closebtn(){
+    bac.style.display = 'none';
+    bac.style.opacity = '0';
+}
+function oppen(){
+    bac.style.display = 'block';
+    bac.style.opacity = '1';
+}
+btn.addEventListener('click',() =>{
+    closebtn()
+})
