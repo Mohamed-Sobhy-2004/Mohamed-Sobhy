@@ -1,1 +1,77 @@
-let minBody=document.querySelector(".box-card"),search=document.querySelector("#search"),cirlcl=document.querySelector(".cirlcl"),serchslider=document.querySelector(".serchslider"),locsaver=localStorage.getItem("them");cirlcl.onclick=toggl;let content={serise:[],ser:[]};async function install(){document.querySelector(".loading").style.display="flex",document.querySelector(".box-card").style.display="none";const e=await fetch("https://api.tvmaze.com/shows"),t=await e.json();content.serise=t,bulde(),document.querySelector(".loading").style.display="none",document.querySelector(".box-card").style.display="flex"}function bulde(){for(let e=0;e<content.serise.length;e++)content.ser.push({name:content.serise[e].name,img:content.serise[e].image.original,language:content.serise[e].language,runtime:content.serise[e].runtime,rating:content.serise[e].rating.average});gets()}function buldeCard(e){let t="";t+=`\n        \n        <a href="#"class="card">\n            <img src="${e.img}" alt="">\n            <div class="info">\n                <span><p>Rating: ${e.rating} / runtime: ${e.runtime}</p></span>\n                <h3>${e.name}</h3>\n            </div>\n        </a>\n        \n        `,minBody.innerHTML+=t}function buldeCardser(e){let t="";t=`\n        \n        <a href="#"class="card">\n            <img src="${e.image.original}" alt="">\n            <div class="info">\n                <span><p>Rating: ${e.rating.average} / runtime: ${e.runtime}</p></span>\n                <h3>${e.name}</h3>\n            </div>\n        </a>\n        \n        `,serchslider.innerHTML=t}function gets(){for(let e=0;e<content.ser.length;e++){buldeCard(content.ser[e])}}async function instalsl(e){const t=await fetch(`https://api.tvmaze.com/search/shows?q=${e}`),n=await t.json();if(""!=search.value){for(let e=0;e<n.length;e++){buldeCardser(n[e].show)}serchslider.style.display="flex"}else serchslider.style.display="none"}function light(){document.body.classList.add("light"),localStorage.setItem("them","light"),cirlcl.style.transform="translateX(20px)"}function darke(){document.body.classList.remove("light"),localStorage.setItem("them","dark"),cirlcl.style.transform="translateX(0px)"}function toggl(){"light"!=localStorage.them?light():darke()}"light"==localStorage.them?light():darke(),install();
+let up = document.querySelector('.up')
+
+function sendEmail(){
+    const data ={
+        To_email:'mhmdssssn64@gmail.com',
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        sub: 'Service',
+        message:`
+        Name : ${document.getElementById('name').value}
+        Email : ${document.getElementById('email').value}
+        Phone Number : ${document.getElementById('Phone').value}
+        Message : ${document.getElementById('message').value}
+        `
+    }
+    emailjs.send('service_zmgwepn','template_gxabvb2',data).then((Response) =>{
+        h2.innerText = 'Thank you For Contact'
+        oppen()
+    }).catch((Error) =>{
+        h2.innerText = Error
+        oppen()
+    })
+}
+
+
+document.getElementById('send').addEventListener('click',() =>{
+    if(document.getElementById('email').value != '' && document.getElementById('message').value !=''){
+        sendEmail()
+    }else{
+        h2.innerText = 'Pleas Enter your Email And your Message'
+        oppen()
+    }
+})
+
+
+onscroll = function(){
+    if(scrollY >= 362){
+        up.style.opacity = '1'
+    }else{
+        up.style.opacity = '0'
+    }
+}
+
+up.onclick = function(){
+    scrollTo({
+        left: 0,
+        top: 0,
+        behavior: "smooth",
+    })
+}
+
+let bac = document.createElement('div');
+let divs = document.createElement('div');
+let h2 = document.createElement('h2');
+let btn = document.createElement('button');
+ btn.classList.add('closse');
+ divs.classList.add('thank');
+ bac.classList.add('background-blur');
+ btn.innerText = 'Close';
+ document.body.prepend(bac);
+ divs.appendChild(h2);
+ divs.appendChild(btn);
+ document.querySelector('.background-blur').appendChild(divs);
+
+
+
+function closebtn(){
+    bac.style.display = 'none';
+    bac.style.opacity = '0';
+}
+function oppen(){
+    bac.style.display = 'block';
+    bac.style.opacity = '1';
+}
+btn.addEventListener('click',() =>{
+    closebtn()
+})
