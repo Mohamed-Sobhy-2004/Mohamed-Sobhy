@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/</loc>
-      <lastmod>2026-04-29</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>1.0</priority>
-   </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- النسخة الإنجليزية -->
+  <url>
+    <loc>https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/index.html</loc>
+    <xhtml:link 
+                 rel="alternate" 
+                 hreflang="ar" 
+                 href="https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/index-ar.html"/>
+    <xhtml:link 
+                 rel="alternate" 
+                 hreflang="en" 
+                 href="https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/index.html"/>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- النسخة العربية -->
+  <url>
+    <loc>https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/index-ar.html</loc>
+    <xhtml:link 
+                 rel="alternate" 
+                 hreflang="en" 
+                 href="https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/index.html"/>
+    <xhtml:link 
+                 rel="alternate" 
+                 hreflang="ar" 
+                 href="https://mohamed-sobhy-2004.github.io/Mohamed-Sobhy/index-ar.html"/>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
