@@ -1,1 +1,91 @@
-let up=document.querySelector(".up"),indecator=document.querySelector(".indecator"),local=localStorage.getItem("ind");async function dx(){emailjs.init({publicKey:"jzdLWBtcu3oAGavJo"})}function sendEmail(){const e={To_email:"mhmdssssn64@gmail.com",from_name:document.getElementById("name").value,from_email:document.getElementById("email").value,sub:"Service",message:`\n        Name : ${document.getElementById("name").value}\n        Email : ${document.getElementById("email").value}\n        Phone Number : ${document.getElementById("Phone").value}\n        Message : ${document.getElementById("message").value}\n        `};emailjs.send("service_zmgwepn","template_gxabvb2",e).then(e=>{h2.innerText="Thank you For Contact",oppen()}).catch(e=>{h2.innerText=e,oppen()})}dx(),document.getElementById("send").addEventListener("click",()=>{""!=document.getElementById("email").value&&""!=document.getElementById("message").value?sendEmail():(h2.innerText="Pleas Enter your Email And your Message",oppen())}),onscroll=function(){scrollY>=362?up.style.opacity="1":up.style.opacity="0"},up.onclick=function(){scrollTo({left:0,top:0,behavior:"smooth"})};let bac=document.createElement("div"),divs=document.createElement("div"),h2=document.createElement("h2"),btn=document.createElement("button");function closebtn(){bac.style.display="none",bac.style.opacity="0"}function oppen(){bac.style.display="block",bac.style.opacity="1"}btn.classList.add("closse"),divs.classList.add("thank"),bac.classList.add("background-blur"),btn.innerText="Close",document.body.prepend(bac),divs.appendChild(h2),divs.appendChild(btn),document.querySelector(".background-blur").appendChild(divs),btn.addEventListener("click",()=>{closebtn()});
+let up = document.querySelector('.up')
+let indecator = document.querySelector('.indecator')
+let local = localStorage.getItem('ind')
+
+function dx(){
+    emailjs.init({
+      publicKey: "jzdLWBtcu3oAGavJo",
+    });
+ };
+
+function sendEmail(){
+
+
+
+
+
+    const data ={
+        To_email:'mhmdssssn64@gmail.com',
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        sub: 'Service',
+        message:`
+        Name : ${document.getElementById('name').value}
+        Email : ${document.getElementById('email').value}
+        Phone Number : ${document.getElementById('Phone').value}
+        Message : ${document.getElementById('message').value}
+        `
+    }
+    emailjs.send('service_zmgwepn','template_gxabvb2',data).then((Response) =>{
+        h2.innerText = 'Thank you For Contact'
+        oppen()
+    }).catch((Error) =>{
+        h2.innerText = Error
+        oppen()
+    })
+}
+
+
+document.getElementById('send').addEventListener('click',() =>{
+    if(document.getElementById('email').value != '' && document.getElementById('message').value !=''){
+        sendEmail()
+    }else{
+        h2.innerText = 'Pleas Enter your Email And your Message'
+        oppen()
+    }
+})
+
+
+onscroll = function(){
+    if(scrollY >= 362){
+        up.style.opacity = '1'
+    }else{
+        up.style.opacity = '0'
+    }
+}
+
+up.onclick = function(){
+    scrollTo({
+        left: 0,
+        top: 0,
+        behavior: "smooth",
+    })
+}
+
+let bac = document.createElement('div');
+let divs = document.createElement('div');
+let h2 = document.createElement('h2');
+let btn = document.createElement('button');
+ btn.classList.add('closse');
+ divs.classList.add('thank');
+ bac.classList.add('background-blur');
+ btn.innerText = 'Close';
+ document.body.prepend(bac);
+ divs.appendChild(h2);
+ divs.appendChild(btn);
+ document.querySelector('.background-blur').appendChild(divs);
+
+
+
+function closebtn(){
+    bac.style.display = 'none';
+    bac.style.opacity = '0';
+}
+function oppen(){
+    bac.style.display = 'block';
+    bac.style.opacity = '1';
+}
+btn.addEventListener('click',() =>{
+    closebtn()
+})
+dx()
